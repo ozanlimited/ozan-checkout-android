@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ozancheckout_android</string>
+    <string name="Environment">Environment</string>
+    <string-array name="environments">
+        <item>DEV</item>
+        <item>QA</item>
+        <item>SANDBOX</item>
+        <item>PRODUCTION</item>
+    </string-array>
+</resources>
