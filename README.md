@@ -1,6 +1,6 @@
 ## Ozan Checkout Android SDK
 
-(https://img.shields.io/badge/API-9%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16)
+[(https://img.shields.io/badge/API-9%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16)
 
 The Ozan Checkout Android SDK provides a simple mechanism to add checkout functionality to your apps. The overall checkout flow looks like this
 ## Installation
