@@ -24,6 +24,10 @@ For the full documentation and more information about the Ozan Checkout Android 
 
 There is an example app provided [here](https://github.com/ozanlimited/ozan-checkout-android/tree/master/Sample) for Java.
 
+## Proguard
+
+A ProGuard configuration is provided as part of the Ozan Checkout Android SDK. There is no need to add any Ozan Checkout-specific rules to your ProGuard configuration.
+
 ## License
 
 The Braintree Android SDK is open source and available under the MIT license. See the [LICENSE](LICENSE) file for more info.
