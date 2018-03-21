@@ -10,7 +10,7 @@ Add the dependency in your `build.gradle`:
 
 ```gradle
 dependencies {
-	compile 'com.ozancheckout:sdk:1.0.0'
+	compile 'com.ozancheckout:sdk:1.0.1'
 }
 ```
 
