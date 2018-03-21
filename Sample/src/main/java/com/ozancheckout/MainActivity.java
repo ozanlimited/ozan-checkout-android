@@ -30,6 +30,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String YOUR_API_KEY = "22aa075d49bf4676972a90511d8d83c8";
+
     private TextView textView_token;
     private RippleEffectView checkout;
     private ListView itemsListview;
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private android.widget.EditText merchantNameEdittext;
     private android.widget.EditText amountEdittext;
     private android.widget.EditText currencyEdittext;
+    private android.widget.EditText localeEdittext;
     private android.widget.EditText apiKeyEdittext;
     private AppCompatSpinner enviromentSpinner;
     private OzanEnvironment mEnvironment;
@@ -51,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         this.amountEdittext = (EditText) findViewById(R.id.amountEdittext);
         this.merchantNameEdittext = (EditText) findViewById(R.id.merchantNameEdittext);
         this.apiKeyEdittext = (EditText) findViewById(R.id.apiKeyEdittext);
+        this.localeEdittext = (EditText)findViewById(R.id.editTextLocale);
         textView_token = (TextView) findViewById(R.id.textView_token);
         itemsListview = (ListView) findViewById(R.id.itemsListview);
         checkout = (RippleEffectView) findViewById(R.id.button_checkout);
@@ -89,24 +93,15 @@ public class MainActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, android.R.id.text1, mPaymentItems);
         itemsListview.setAdapter(itemsAdapter);
 
+        //add your api key here if you want
+        apiKeyEdittext.setText(YOUR_API_KEY);
     }
 
     private void checkFields() {
-       /* if (mPaymentItems.size() == 0) {
-            Toast.makeText(this, "Add some items", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (apiKeyEdittext.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ApiKey Please...", Toast.LENGTH_SHORT).show();
-        }
-        if (merchantNameEdittext.getText().toString().isEmpty() || amountEdittext.getText().toString().isEmpty()
-                || currencyEdittext.getText().toString().isEmpty()) {
-            Toast.makeText(this, "Give some about merchant/amount/currency", Toast.LENGTH_SHORT).show();
-            return;
-        }*/
         try {
             double amount = Double.parseDouble(amountEdittext.getText().toString());
             CheckoutItem checkoutItem = new CheckoutItem.Builder(apiKeyEdittext.getText().toString(),amount, currencyEdittext.getText().toString(), mPaymentItems)
+                    .locale(localeEdittext.getText().toString()) // for Russian
                     .merchantName(merchantNameEdittext.getText().toString())
                     .build();
             OzanCheckout.with(checkoutItem, mEnvironment).startCheckout(MainActivity.this);
